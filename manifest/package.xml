@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>ContactRestService</members>
+		<members>ContactRestServiceTest</members>
+		<members>ContactTestDataFactory</members>
+		<members>ProductPricingService</members>
+		<members>ProductPricingServiceTest</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Error_Product_Country_No_Info</members>
+		<name>CustomLabel</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>CustomMetadata</name>
+	</types>
+	<types>
+		<members>ProductPricingByCountry__mdt</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>lwcCustomerProductInformation</members>
+		<name>LightningComponentBundle</name>
+	</types>
+	<version>64.0</version>
+</Package>

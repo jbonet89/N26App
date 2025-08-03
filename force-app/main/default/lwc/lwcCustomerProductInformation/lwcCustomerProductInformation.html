@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : Jaume.Bonet@The-Cocktail.com
+  @group             : 
+  @last modified on  : 08-03-2025
+  @last modified by  : Jaume.Bonet@The-Cocktail.com
+-->
+<template>
+    <lightning-card title="Product Pricing Info" icon-name="standard:product">
+        <template if:true={pricingData}>
+            <div class="slds-grid slds-wrap slds-p-around_small">
+
+                <div class="slds-col slds-size_1-of-2">
+                    <strong class="slds-text-title">Product Plan:</strong>
+                    <lightning-formatted-text value={product}
+                        class="slds-show slds-text-heading_small slds-m-bottom_x-small"></lightning-formatted-text>
+                </div>
+                <div class="slds-col slds-size_1-of-2 ">
+                    <strong class="slds-text-title">Country:</strong>
+                    <lightning-formatted-text value={country}
+                        class="slds-show slds-text-heading_small slds-m-bottom_x-small"></lightning-formatted-text>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-border_top slds-p-bottom_x-small"></div>
+                <div class="slds-col slds-size_1-of-3 slds-small-size_1-of-3">
+                    <strong class="slds-text-title">Monthly Fee:</strong>
+                    <lightning-formatted-number value={pricingData.Monthly_Fee__c} format-style="currency"
+                        currency-code="EUR" class="slds-show slds-text-heading_small slds-m-bottom_x-small">
+                    </lightning-formatted-number>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-small-size_1-of-3">
+                    <strong class="slds-text-title">ATM Fee (%):</strong><lightning-formatted-number
+                        value={pricingData.ATM_Fee__c} format-style="percent" maximum-fraction-digits="3"
+                        class="slds-show slds-text-heading_small slds-m-bottom_x-small"></lightning-formatted-number>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-small-size_1-of-3">
+                    <strong class="slds-text-title">Card Replacement Cost:</strong>
+                    <lightning-formatted-number value={pricingData.Card_Replacement_Cost__c} format-style="currency"
+                        currency-code="EUR" class="slds-show slds-text-heading_small slds-m-bottom_x-small">
+                    </lightning-formatted-number>
+                </div>
+            </div>
+        </template>
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-around_medium">
+                {error}
+            </div>
+        </template>
+    </lightning-card>
+</template>
